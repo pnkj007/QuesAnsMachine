@@ -1,0 +1,53 @@
+<html>
+<style>
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+</style>
+<body>
+<div>
+    <form action = "/templates" method = "POST" >
+		<label for="fname">Context</label>
+		<textarea id="Context" name = "Context" value="{{request.form['question']}}" placeholder = "Please enter the Context!!">
+		</textarea>
+		<label for="fname">Question</label>
+		<textarea id="Question" name = "Question" value="{{request.form['context']}}"placeholder = "Please enter the Question!!">
+		</textarea>
+		<p><input type = "submit" value = "submit" onclick="yourJsFunction();"/></p>
+		 
+		<label for="fname">Answer:</label>
+		<textbox name="output_text" id="output_text" maxlength="50000" style="width:600px; height:250px">
+			<p>{{ output_summary }} </p>
+		</textbox>
+      </form>
+<div>
+</body>
+</html>
